@@ -1,0 +1,70 @@
+body {
+  color: #151515;
+}
+
+header {
+  width: 1275px;
+  height: 800px;
+}
+
+@media screen and (min-width: 376px) {
+  div.container {
+    width: 1110px;
+  }
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.headings {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  text-align: left;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  stroke: #000000;
+  stroke-width: 1;
+  stroke-linejoin: miter;
+}
+.headings[class*=heading-xl] {
+  font-size: 96px;
+  line-height: 88px;
+}
+.headings[class*=heading-l] {
+  font-size: 70px;
+  line-height: 70px;
+}
+.headings[class*=heading-m] {
+  font-size: 60px;
+  line-height: 50px;
+}
+.headings[class*=heading-s] {
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.body-text {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: #444444;
+  stroke: #000000;
+  stroke-width: 1;
+  stroke-linejoin: miter;
+  text-align: left;
+}
+.body-text[class*=text-m] {
+  font-size: 22px;
+  line-height: 32px;
+}
+.body-text[class*=text-s] {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/*# sourceMappingURL=style.css.map */
