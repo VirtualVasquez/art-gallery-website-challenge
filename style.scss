@@ -215,6 +215,10 @@ body{
         width: 450px;
         height: 800px;
         z-index: 0;
+        @media screen and (max-width: 375px){
+            width: 0px;
+            height: 0px;
+        }
         //bonus, not part of challenge
         @media screen and (min-width: 1441px){
             width: calc((#{$viewport-width} - 1100px) / 2 + 288px);
