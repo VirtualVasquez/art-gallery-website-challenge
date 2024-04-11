@@ -61,6 +61,10 @@ h1, h2, h3, h4, h5, h6, p{
     }
     &.header-s{
         @include header-size-properties(s);
+        @media screen and (max-width: 375px){
+            font-size: 24px;
+            line-height: 22px;
+        }
     }
 }
 
@@ -89,6 +93,9 @@ p{
     }
     &.text-s{
         @include body-size-properties(s);
+        @media screen and (max-width: 375px) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -150,6 +157,9 @@ body{
 .row{
     display: flex;
     flex-direction: row;
+    &.mobile-column{
+        flex-direction: column;
+    }
 }
 .column{
     display: flex;
@@ -300,15 +310,8 @@ section{
             > .row{
                 flex-direction: column;
             }
-
             p{
                 margin-bottom: 30px;
-            }
-            .row:nth-child(1){
-
-                .column:nth-child(1){
-                    
-                }
             }
             .row:nth-child(2){
                 img{
@@ -317,8 +320,6 @@ section{
                 .column:nth-child(2){
                     div{
                         height: 293px;
-                        h3, p{
-                        }
                     }                
                 }
             }
@@ -329,6 +330,13 @@ section{
 
 footer{
     width: 100%;
+    .social-media{
+        width: 100px;
+        .row{
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
     @media screen and (min-width: 376px){
         height: 244px;
         .container{
@@ -349,15 +357,23 @@ footer{
                     }
                 }
 
-                .social-media{
-                    width: 100px;
-                }
+
             }
         }
 
     }
     @media screen and (max-width: 375px){
-        
+        height: 336px;
+        .container{
+            padding-top: 48px;
+            width: 311px;
+            height: 240px;
+            justify-content: space-between;
+            .footer-text{
+                height: 180px;
+                justify-content: space-between;
+            }
+        }
     }
 }
 

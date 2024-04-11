@@ -41,6 +41,12 @@ h1.header-s, h2.header-s, h3.header-s, h4.header-s, h5.header-s, h6.header-s, p.
   font-size: 30px;
   line-height: 30px;
 }
+@media screen and (max-width: 375px) {
+  h1.header-s, h2.header-s, h3.header-s, h4.header-s, h5.header-s, h6.header-s, p.header-s {
+    font-size: 24px;
+    line-height: 22px;
+  }
+}
 
 .body-text {
   font-family: "Outfit", sans-serif;
@@ -75,6 +81,11 @@ p.text-m {
 p.text-s {
   font-size: 18px;
   line-height: 28px;
+}
+@media screen and (max-width: 375px) {
+  p.text-s {
+    font-size: 16px;
+  }
 }
 
 button {
@@ -130,6 +141,9 @@ body {
 .row {
   display: flex;
   flex-direction: row;
+}
+.row.mobile-column {
+  flex-direction: column;
 }
 
 .column {
@@ -290,6 +304,13 @@ body {
 footer {
   width: 100%;
 }
+footer .social-media {
+  width: 100px;
+}
+footer .social-media .row {
+  width: 100%;
+  justify-content: space-between;
+}
 @media screen and (min-width: 376px) {
   footer {
     height: 244px;
@@ -312,8 +333,20 @@ footer {
   footer .container .row .footer-text .row p {
     width: 430px;
   }
-  footer .container .row .social-media {
-    width: 100px;
+}
+@media screen and (max-width: 375px) {
+  footer {
+    height: 336px;
+  }
+  footer .container {
+    padding-top: 48px;
+    width: 311px;
+    height: 240px;
+    justify-content: space-between;
+  }
+  footer .container .footer-text {
+    height: 180px;
+    justify-content: space-between;
   }
 }
 
