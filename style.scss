@@ -29,12 +29,18 @@ $body-font-sizes: (
     line-height: map-get($properties, line-height);
 }
 
-body{
-    color: $almost-black;
-    margin:0;
-    max-width: 1440px;
+.headings{
+    font-family: "Big Shoulders Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    text-align: left;
+    text-shadow: $text-shadow-values;
+    text-transform: uppercase;
+    stroke: $black;
+    stroke-width: 1;
+    stroke-linejoin: miter;
 }
-
 h1, h2, h3, h4, h5, h6, p{
     margin: 0;
     &.header-xl{
@@ -49,14 +55,91 @@ h1, h2, h3, h4, h5, h6, p{
     }
 }
 
+.body-text{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    color: $dark-grey;
+    stroke: $black;
+    stroke-width: 1;
+    stroke-linejoin: miter;
+    text-align: left;
+    @include body-size-properties(m);
+    @media screen and (max-width: 375px) {
+        @include body-size-properties(s);
+    }
+}
+
 p{
     &.text-m{
         @include body-size-properties(m);
     }
 }
 
+button{
+    width: 260px;
+    height: 72px;
+    color: $white;
+    display: flex;
+    align-items: center;
+    padding:0;
+    border:0;
+    .label,.svg{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &:hover{
+       .label{
+        background-color: $gold;
+       }        
+       .svg{
+        background-color: $almost-black;
+       }
+    }
+    .label{
+        font-family: "Big Shoulders Display";
+        text-transform: uppercase;
+        letter-spacing: 3.64px;
+        font-size: 24px;
+        width: 204px;
+        height: 72px;
+        background-color:$almost-black;
+        p{
+            font-weight: 700;
+            -webkit-text-stroke: 1px $black;      
+            text-shadow: $text-shadow-values;
+        }
+
+    }
+    .svg{
+        background-color: $gold;
+        height: 72px;
+        width: 56px;
+        align-items: center;
+        img{
+            width: 10px;
+
+        }
+    }
+}
+
+
+body{
+    color: $almost-black;
+    margin:0;
+    max-width: 1440px;
+}
+
+
 .row{
     display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
 }
 
 div{
@@ -125,8 +208,6 @@ section{
                 > .column:nth-child(1) > h1{
                     mix-blend-mode: difference;
                     color: $white;
-                    display: flex;
-                    flex-direction: column;
                 }
                 > .column:nth-child(2){
                     width: 350px;
@@ -149,8 +230,6 @@ section{
             .row:nth-child(2){
                 justify-content: space-between;
                 .column:nth-child(2){
-                    display: flex;
-                    flex-direction: column;
                     justify-content: space-between;
                     div{
                         width: 445px;
@@ -175,8 +254,6 @@ section{
                 }
                 > .column:nth-child(1) > h1{
                     color: $almost-black;
-                    display: flex;
-                    flex-direction: column;
                 }
                 > .column:nth-child(2){
                     button{
@@ -189,82 +266,7 @@ section{
     }   
 }
 
-.headings{
-    font-family: "Big Shoulders Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    text-align: left;
-    text-shadow: $text-shadow-values;
-    text-transform: uppercase;
-    stroke: $black;
-    stroke-width: 1;
-    stroke-linejoin: miter;
-}
 
-.body-text{
-    font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    color: $dark-grey;
-    stroke: $black;
-    stroke-width: 1;
-    stroke-linejoin: miter;
-    text-align: left;
-    @include body-size-properties(m);
-    @media screen and (max-width: 375px) {
-        @include body-size-properties(s);
-    }
-}
-
-button{
-    width: 260px;
-    height: 72px;
-    color: $white;
-    display: flex;
-    align-items: center;
-    padding:0;
-    border:0;
-    .label,.svg{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    &:hover{
-       .label{
-        background-color: $gold;
-       }        
-       .svg{
-        background-color: $almost-black;
-       }
-    }
-    .label{
-        font-family: "Big Shoulders Display";
-        text-transform: uppercase;
-        letter-spacing: 3.64px;
-        font-size: 24px;
-        width: 204px;
-        height: 72px;
-        background-color:$almost-black;
-        p{
-            font-weight: 700;
-            -webkit-text-stroke: 1px $black;      
-            text-shadow: $text-shadow-values;
-        }
-
-    }
-    .svg{
-        background-color: $gold;
-        height: 72px;
-        width: 56px;
-        align-items: center;
-        img{
-            width: 10px;
-
-        }
-    }
-}
 
 
 

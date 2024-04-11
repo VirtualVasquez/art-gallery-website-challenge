@@ -1,7 +1,14 @@
-body {
-  color: #151515;
-  margin: 0;
-  max-width: 1440px;
+.headings {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  text-align: left;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  stroke: #000000;
+  stroke-width: 1;
+  stroke-linejoin: miter;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -23,13 +30,89 @@ h1.header-m, h2.header-m, h3.header-m, h4.header-m, h5.header-m, h6.header-m, p.
   padding: 50px 0;
 }
 
+.body-text {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: #444444;
+  stroke: #000000;
+  stroke-width: 1;
+  stroke-linejoin: miter;
+  text-align: left;
+  font-size: 22px;
+  line-height: 32px;
+}
+@media screen and (max-width: 375px) {
+  .body-text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
 p.text-m {
   font-size: 22px;
   line-height: 32px;
 }
 
+button {
+  width: 260px;
+  height: 72px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+}
+button .label, button .svg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+button:hover .label {
+  background-color: #D5966C;
+}
+button:hover .svg {
+  background-color: #151515;
+}
+button .label {
+  font-family: "Big Shoulders Display";
+  text-transform: uppercase;
+  letter-spacing: 3.64px;
+  font-size: 24px;
+  width: 204px;
+  height: 72px;
+  background-color: #151515;
+}
+button .label p {
+  font-weight: 700;
+  -webkit-text-stroke: 1px #000000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+button .svg {
+  background-color: #D5966C;
+  height: 72px;
+  width: 56px;
+  align-items: center;
+}
+button .svg img {
+  width: 10px;
+}
+
+body {
+  color: #151515;
+  margin: 0;
+  max-width: 1440px;
+}
+
 .row {
   display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
 div .black {
@@ -98,8 +181,6 @@ div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .b
   section.hero-contents > .row > .column:nth-child(1) > h1 {
     mix-blend-mode: difference;
     color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
   }
   section.hero-contents > .row > .column:nth-child(2) {
     width: 350px;
@@ -122,8 +203,6 @@ div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .b
     justify-content: space-between;
   }
   section.grid .row:nth-child(2) .column:nth-child(2) {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
   }
   section.grid .row:nth-child(2) .column:nth-child(2) div {
@@ -147,89 +226,10 @@ div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .b
   }
   section.hero-contents > .row > .column:nth-child(1) > h1 {
     color: #151515;
-    display: flex;
-    flex-direction: column;
   }
   section.hero-contents > .row > .column:nth-child(2) button {
     margin-top: 36px;
   }
-}
-
-.headings {
-  font-family: "Big Shoulders Display", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: normal;
-  text-align: left;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  text-transform: uppercase;
-  stroke: #000000;
-  stroke-width: 1;
-  stroke-linejoin: miter;
-}
-
-.body-text {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  color: #444444;
-  stroke: #000000;
-  stroke-width: 1;
-  stroke-linejoin: miter;
-  text-align: left;
-  font-size: 22px;
-  line-height: 32px;
-}
-@media screen and (max-width: 375px) {
-  .body-text {
-    font-size: 18px;
-    line-height: 28px;
-  }
-}
-
-button {
-  width: 260px;
-  height: 72px;
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  border: 0;
-}
-button .label, button .svg {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-button:hover .label {
-  background-color: #D5966C;
-}
-button:hover .svg {
-  background-color: #151515;
-}
-button .label {
-  font-family: "Big Shoulders Display";
-  text-transform: uppercase;
-  letter-spacing: 3.64px;
-  font-size: 24px;
-  width: 204px;
-  height: 72px;
-  background-color: #151515;
-}
-button .label p {
-  font-weight: 700;
-  -webkit-text-stroke: 1px #000000;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-button .svg {
-  background-color: #D5966C;
-  height: 72px;
-  width: 56px;
-  align-items: center;
-}
-button .svg img {
-  width: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
