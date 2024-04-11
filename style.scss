@@ -49,7 +49,6 @@ h1, h2, h3, h4, h5, h6, p{
     }
 }
 
-
 p{
     &.text-m{
         @include body-size-properties(m);
@@ -71,14 +70,16 @@ div{
 
 }
 
-div.container{    
-    @media screen and (min-width: 376px){
-        width: 1110px;
-        margin-left: 165px;
-    }
-    @media screen and (max-width: 375px) {
-        width: 375px;
-    }
+div, footer, section{
+    &.container{
+        @media screen and (min-width: 376px){
+            width: 1110px;
+            margin-left: 165px;
+        }
+        @media screen and (max-width: 375px) {
+            width: 375px;
+        }
+    }    
 }
 
 .hero-imagery{
@@ -116,7 +117,7 @@ div.container{
 
 section{
     @media screen and (min-width: 376px) {
-        .top-half{
+        &.hero-contents{
             height: 800px;
             > .row{
                 padding-top: 180px;
@@ -135,8 +136,9 @@ section{
                 }
             }        
         }
-        .bottom-half{
-            margin: 192px 0;
+        &.grid{
+            margin-top: 192px;
+            margin-bottom: 192px;
             .row:nth-child(1){
                 justify-content: space-between;
                 margin-bottom: 30px;
@@ -147,6 +149,8 @@ section{
             .row:nth-child(2){
                 justify-content: space-between;
                 .column:nth-child(2){
+                    display: flex;
+                    flex-direction: column;
                     justify-content: space-between;
                     div{
                         width: 445px;
@@ -161,7 +165,7 @@ section{
     }
 
     @media screen and (max-width: 375px) {
-        .top-half{
+        &.hero-contents{
             height: 390px;
             > .row{
                 padding: 0px 16px;

@@ -41,13 +41,13 @@ div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .b
 }
 
 @media screen and (min-width: 376px) {
-  div.container {
+  div.container, footer.container, section.container {
     width: 1110px;
     margin-left: 165px;
   }
 }
 @media screen and (max-width: 375px) {
-  div.container {
+  div.container, footer.container, section.container {
     width: 375px;
   }
 }
@@ -88,66 +88,69 @@ div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .b
 }
 
 @media screen and (min-width: 376px) {
-  section .top-half {
+  section.hero-contents {
     height: 800px;
   }
-  section .top-half > .row {
+  section.hero-contents > .row {
     padding-top: 180px;
     justify-content: space-between;
   }
-  section .top-half > .row > .column:nth-child(1) > h1 {
+  section.hero-contents > .row > .column:nth-child(1) > h1 {
     mix-blend-mode: difference;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
   }
-  section .top-half > .row > .column:nth-child(2) {
+  section.hero-contents > .row > .column:nth-child(2) {
     width: 350px;
   }
-  section .top-half > .row > .column:nth-child(2) button {
+  section.hero-contents > .row > .column:nth-child(2) button {
     margin-top: 72px;
   }
-  section .bottom-half {
-    margin: 192px 0;
+  section.grid {
+    margin-top: 192px;
+    margin-bottom: 192px;
   }
-  section .bottom-half .row:nth-child(1) {
+  section.grid .row:nth-child(1) {
     justify-content: space-between;
     margin-bottom: 30px;
   }
-  section .bottom-half .row:nth-child(1) .column:nth-child(1) {
+  section.grid .row:nth-child(1) .column:nth-child(1) {
     width: 350px;
   }
-  section .bottom-half .row:nth-child(2) {
+  section.grid .row:nth-child(2) {
     justify-content: space-between;
   }
-  section .bottom-half .row:nth-child(2) .column:nth-child(2) {
+  section.grid .row:nth-child(2) .column:nth-child(2) {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
   }
-  section .bottom-half .row:nth-child(2) .column:nth-child(2) div {
+  section.grid .row:nth-child(2) .column:nth-child(2) div {
     width: 445px;
     height: 377px;
   }
-  section .bottom-half .row:nth-child(2) .column:nth-child(2) div h3, section .bottom-half .row:nth-child(2) .column:nth-child(2) div p {
+  section.grid .row:nth-child(2) .column:nth-child(2) div h3, section.grid .row:nth-child(2) .column:nth-child(2) div p {
     margin: 0 47.5px;
   }
 }
 @media screen and (max-width: 375px) {
-  section .top-half {
+  section.hero-contents {
     height: 390px;
   }
-  section .top-half > .row {
+  section.hero-contents > .row {
     padding: 0px 16px;
     flex-direction: column;
   }
-  section .top-half > .row .column {
+  section.hero-contents > .row .column {
     margin-top: 36px;
   }
-  section .top-half > .row > .column:nth-child(1) > h1 {
+  section.hero-contents > .row > .column:nth-child(1) > h1 {
     color: #151515;
     display: flex;
     flex-direction: column;
   }
-  section .top-half > .row > .column:nth-child(2) button {
+  section.hero-contents > .row > .column:nth-child(2) button {
     margin-top: 36px;
   }
 }
