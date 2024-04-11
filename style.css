@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6, p {
 h1.header-m, h2.header-m, h3.header-m, h4.header-m, h5.header-m, h6.header-m, p.header-m {
   font-size: 60px;
   line-height: 50px;
-  margin: 60px 0;
+  margin: 50px 0;
 }
 
 p.text-m {
@@ -20,6 +20,14 @@ p.text-m {
 
 .row {
   display: flex;
+}
+
+div .black {
+  background-color: #151515;
+}
+div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .black h5, div .black h6 {
+  mix-blend-mode: difference;
+  color: #FFFFFF;
 }
 
 @media screen and (min-width: 376px) {
@@ -37,10 +45,9 @@ p.text-m {
 .hero-imagery {
   display: flex;
 }
-.hero-imagery .black-mask {
+.hero-imagery .mask {
   width: 450px;
   height: 800px;
-  background-color: #151515;
   z-index: 0;
 }
 .hero-imagery img {
@@ -97,9 +104,13 @@ p.text-m {
   }
   section .bottom-half .row:nth-child(1) {
     justify-content: space-between;
+    margin-bottom: 30px;
   }
   section .bottom-half .row:nth-child(1) .column:nth-child(1) {
     width: 350px;
+  }
+  section .bottom-half .row:nth-child(2) {
+    justify-content: space-between;
   }
 }
 @media screen and (max-width: 375px) {

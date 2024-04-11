@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6, p{
     margin: 0;
     &.header-m{
         @include header-size-properties(m);
-        margin: 60px 0;
+        margin: 50px 0;
     }
 }
 
@@ -57,6 +57,17 @@ p{
     display: flex;
 }
 
+div{
+    .black{
+        background-color: $almost-black;
+        p, h1, h2, h3, h4, h5, h6{
+            mix-blend-mode: difference;
+            color: $white;
+        }
+    }
+
+}
+
 div.container{    
     @media screen and (min-width: 376px){
         width: 1110px;
@@ -69,10 +80,9 @@ div.container{
 
 .hero-imagery{
     display: flex;
-    .black-mask{
+    .mask{
         width: 450px;
         height: 800px;
-        background-color: $almost-black;
         z-index: 0;
     }
     img{
@@ -127,9 +137,13 @@ section{
             margin: 192px 0;
             .row:nth-child(1){
                 justify-content: space-between;
+                margin-bottom: 30px;
                 .column:nth-child(1){
                     width: 350px;
                 }
+            }
+            .row:nth-child(2){
+                justify-content: space-between;
             }
         }
     }
