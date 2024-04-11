@@ -7,6 +7,16 @@ body {
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
+h1.header-m, h2.header-m, h3.header-m, h4.header-m, h5.header-m, h6.header-m, p.header-m {
+  font-size: 60px;
+  line-height: 50px;
+  margin: 60px 0;
+}
+
+p.text-m {
+  font-size: 22px;
+  line-height: 32px;
+}
 
 .row {
   display: flex;
@@ -81,6 +91,15 @@ h1, h2, h3, h4, h5, h6, p {
   }
   section .top-half > .row > .column:nth-child(2) button {
     margin-top: 72px;
+  }
+  section .bottom-half {
+    margin: 192px 0;
+  }
+  section .bottom-half .row:nth-child(1) {
+    justify-content: space-between;
+  }
+  section .bottom-half .row:nth-child(1) .column:nth-child(1) {
+    width: 350px;
   }
 }
 @media screen and (max-width: 375px) {
