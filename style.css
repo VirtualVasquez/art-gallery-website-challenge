@@ -1,21 +1,65 @@
 body {
   color: #151515;
+  margin: 0;
+  max-width: 1440px;
+  border: 1px solid red;
 }
 
-header {
-  width: 1275px;
-  height: 800px;
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+.row {
+  display: flex;
 }
 
 @media screen and (min-width: 376px) {
   div.container {
     width: 1110px;
+    margin-left: 165px;
+  }
+}
+@media screen and (max-width: 375px) {
+  div.container {
+    width: 343px;
   }
 }
 
-section {
+.hero-imagery {
   display: flex;
-  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.hero-imagery .black-mask {
+  width: 450px;
+  height: 800px;
+  background-color: #151515;
+  z-index: 0;
+}
+.hero-imagery image {
+  z-index: 0;
+}
+
+section .top-half {
+  height: 800px;
+}
+section .top-half > .row {
+  padding-top: 180px;
+  justify-content: space-between;
+}
+section .top-half > .row > .column:nth-child(1) > h1 {
+  mix-blend-mode: difference;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+section .top-half > .row > .column:nth-child(2) {
+  width: 350px;
+}
+section .top-half > .row > .column:nth-child(2) button {
+  margin-top: 72px;
 }
 
 .headings {
