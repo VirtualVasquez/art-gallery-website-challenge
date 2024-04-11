@@ -142,8 +142,10 @@ body {
   display: flex;
   flex-direction: row;
 }
-.row.mobile-column {
-  flex-direction: column;
+@media screen and (max-width: 375px) {
+  .row.mobile-column {
+    flex-direction: column;
+  }
 }
 
 .column {
@@ -317,20 +319,16 @@ footer .social-media .row {
   }
   footer .container {
     padding-top: 80px;
-  }
-  footer .container .row {
     justify-content: space-between;
   }
-  footer .container .row .footer-text {
+  footer .container .footer-text {
     width: 730px;
-  }
-  footer .container .row .footer-text .row {
     justify-content: space-between;
   }
-  footer .container .row .footer-text .row h3 {
+  footer .container .footer-text h3 {
     width: 160px;
   }
-  footer .container .row .footer-text .row p {
+  footer .container .footer-text p {
     width: 430px;
   }
 }

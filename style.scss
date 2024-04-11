@@ -157,9 +157,12 @@ body{
 .row{
     display: flex;
     flex-direction: row;
+    @media screen and (max-width: 375px) {
     &.mobile-column{
         flex-direction: column;
     }
+    }
+
 }
 .column{
     display: flex;
@@ -341,26 +344,18 @@ footer{
         height: 244px;
         .container{
             padding-top: 80px;
-            .row{
+            justify-content: space-between;
+            .footer-text{
+                width: 730px;
                 justify-content: space-between;
-
-                .footer-text{
-                    width: 730px;
-                    .row{
-                        justify-content: space-between;
-                        h3{
-                            width: 160px;
-                        }
-                        p{
-                            width: 430px;
-                        }
-                    }
+                h3{
+                    width: 160px;
                 }
-
-
+                p{
+                    width: 430px;
+                }
             }
         }
-
     }
     @media screen and (max-width: 375px){
         height: 336px;
