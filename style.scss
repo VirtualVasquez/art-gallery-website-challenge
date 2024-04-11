@@ -5,19 +5,18 @@ $almost-black: #151515;
 $gold: #D5966C;
 $dark-grey: #444444;
 $white: #FFFFFF;
+$viewport-width: 100vw;
 $header-font-sizes: (
     xl: (font-size: 96px, line-height: 88px),
     l: (font-size: 70px, line-height: 70px),
     m: (font-size: 60px, line-height: 60px),
     s: (font-size: 30px, line-height: 30px)
 );
-
 @mixin header-size-properties($size){
     $properties: map-get($header-font-sizes, $size);
     font-size: map-get($properties, font-size);
     line-height: map-get($properties, line-height);
 }
-
 $body-font-sizes: (
     m: (font-size: 22px, line-height: 32px),
     s: (font-size: 18px, line-height: 28px)
@@ -151,7 +150,6 @@ button{
 body{
     color: $almost-black;
     margin:0;
-    max-width: 1440px;
 }
 
 .row{
@@ -162,7 +160,6 @@ body{
         flex-direction: column;
     }
     }
-
 }
 .column{
     display: flex;
@@ -197,17 +194,20 @@ body{
     }
 }
 
-div, footer, section{
-    &.container{
-        @media screen and (min-width: 376px){
-            width: 1110px;
-            margin-left: 165px;
-        }
-        @media screen and (max-width: 375px) {
-            width: 343px;
-        }
-    }    
-}
+
+.container{
+    @media screen and (max-width: 375px) {
+        width: 343px;
+    }
+    @media screen and (min-width: 376px){
+        width: 1110px;
+        margin-left: 165px;
+    }
+    //bonus, not part of challenge
+    @media screen and (min-width: 1441px){
+        margin-left: calc((#{$viewport-width} - 1100px) / 2);
+    }
+}    
 
 .hero-imagery{
     display: flex;
@@ -215,6 +215,10 @@ div, footer, section{
         width: 450px;
         height: 800px;
         z-index: 0;
+        //bonus, not part of challenge
+        @media screen and (min-width: 1441px){
+            width: calc((#{$viewport-width} - 1100px) / 2 + 288px);
+        }
     }
     img{
         z-index: 0;
@@ -293,9 +297,6 @@ section{
             > .row{
                 padding: 0px 16px;
                 flex-direction: column;
-                .column{
-                    // margin-top: 36px;
-                }
                 > .column:nth-child(1) > h1{
                     color: $almost-black;
                 }
@@ -371,9 +372,4 @@ footer{
         }
     }
 }
-
-
-
-
-
 

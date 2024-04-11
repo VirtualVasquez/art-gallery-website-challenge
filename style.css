@@ -135,7 +135,6 @@ button .svg img {
 body {
   color: #151515;
   margin: 0;
-  max-width: 1440px;
 }
 
 .row {
@@ -180,15 +179,20 @@ body {
   }
 }
 
+@media screen and (max-width: 375px) {
+  .container {
+    width: 343px;
+  }
+}
 @media screen and (min-width: 376px) {
-  div.container, footer.container, section.container {
+  .container {
     width: 1110px;
     margin-left: 165px;
   }
 }
-@media screen and (max-width: 375px) {
-  div.container, footer.container, section.container {
-    width: 343px;
+@media screen and (min-width: 1441px) {
+  .container {
+    margin-left: calc((100vw - 1100px) / 2);
   }
 }
 
@@ -199,6 +203,11 @@ body {
   width: 450px;
   height: 800px;
   z-index: 0;
+}
+@media screen and (min-width: 1441px) {
+  .hero-imagery .mask {
+    width: calc((100vw - 1100px) / 2 + 288px);
+  }
 }
 .hero-imagery img {
   z-index: 0;
