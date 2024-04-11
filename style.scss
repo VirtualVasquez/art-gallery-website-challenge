@@ -29,17 +29,20 @@ $body-font-sizes: (
     line-height: map-get($properties, line-height);
 }
 
-
-
 body{
     color: $almost-black;
     margin:0;
     max-width: 1440px;
-    // border: 1px solid red;
 }
 
 h1, h2, h3, h4, h5, h6, p{
     margin: 0;
+    &.header-xl{
+        @include header-size-properties(xl);
+        @media screen and (max-width: 375px) {
+            @include header-size-properties(m);
+        }        
+    }
     &.header-m{
         @include header-size-properties(m);
         padding: 50px 0;
@@ -123,7 +126,6 @@ section{
                     color: $white;
                     display: flex;
                     flex-direction: column;
-                    @include header-size-properties(xl);
                 }
                 > .column:nth-child(2){
                     width: 350px;
@@ -171,7 +173,6 @@ section{
                     color: $almost-black;
                     display: flex;
                     flex-direction: column;
-                    @include header-size-properties(m);
                 }
                 > .column:nth-child(2){
                     button{

@@ -7,6 +7,16 @@ body {
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
+h1.header-xl, h2.header-xl, h3.header-xl, h4.header-xl, h5.header-xl, h6.header-xl, p.header-xl {
+  font-size: 96px;
+  line-height: 88px;
+}
+@media screen and (max-width: 375px) {
+  h1.header-xl, h2.header-xl, h3.header-xl, h4.header-xl, h5.header-xl, h6.header-xl, p.header-xl {
+    font-size: 60px;
+    line-height: 50px;
+  }
+}
 h1.header-m, h2.header-m, h3.header-m, h4.header-m, h5.header-m, h6.header-m, p.header-m {
   font-size: 60px;
   line-height: 50px;
@@ -90,8 +100,6 @@ div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .b
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    font-size: 96px;
-    line-height: 88px;
   }
   section .top-half > .row > .column:nth-child(2) {
     width: 350px;
@@ -138,8 +146,6 @@ div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .b
     color: #151515;
     display: flex;
     flex-direction: column;
-    font-size: 60px;
-    line-height: 50px;
   }
   section .top-half > .row > .column:nth-child(2) button {
     margin-top: 36px;
