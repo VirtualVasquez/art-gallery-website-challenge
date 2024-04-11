@@ -8,8 +8,8 @@ $white: #FFFFFF;
 $header-font-sizes: (
     xl: (font-size: 96px, line-height: 88px),
     l: (font-size: 70px, line-height: 70px),
-    m: (font-size: 60px, line-height: 50px),
-    s: (font-size: 36px, line-height: 36px)
+    m: (font-size: 60px, line-height: 60px),
+    s: (font-size: 30px, line-height: 30px)
 );
 
 @mixin header-size-properties($size){
@@ -53,6 +53,9 @@ h1, h2, h3, h4, h5, h6, p{
         @include header-size-properties(m);
         padding: 50px 0;
     }
+    &.header-s{
+        @include header-size-properties(s);
+    }
 }
 
 .body-text{
@@ -74,6 +77,9 @@ h1, h2, h3, h4, h5, h6, p{
 p{
     &.text-m{
         @include body-size-properties(m);
+    }
+    &.text-s{
+        @include body-size-properties(s);
     }
 }
 
@@ -142,15 +148,12 @@ body{
     flex-direction: column;
 }
 
-div{
-    .black{
-        background-color: $almost-black;
-        p, h1, h2, h3, h4, h5, h6{
-            mix-blend-mode: difference;
-            color: $white;
-        }
+.black{
+    background-color: $almost-black;
+    p, h1, h2, h3, h4, h5, h6{
+        mix-blend-mode: difference;
+        color: $white;
     }
-
 }
 
 div, footer, section{
@@ -264,6 +267,40 @@ section{
         }
 
     }   
+}
+
+footer{
+    width: 100%;
+    @media screen and (min-width: 376px){
+        height: 244px;
+        .container{
+            padding-top: 80px;
+            .row{
+                justify-content: space-between;
+
+                .footer-text{
+                    width: 730px;
+                    .row{
+                        justify-content: space-between;
+                        h3{
+                            width: 160px;
+                        }
+                        p{
+                            width: 430px;
+                        }
+                    }
+                }
+
+                .social-media{
+                    width: 100px;
+                }
+            }
+        }
+
+    }
+    @media screen and (max-width: 375px){
+        
+    }
 }
 
 

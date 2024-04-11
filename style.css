@@ -21,13 +21,17 @@ h1.header-xl, h2.header-xl, h3.header-xl, h4.header-xl, h5.header-xl, h6.header-
 @media screen and (max-width: 375px) {
   h1.header-xl, h2.header-xl, h3.header-xl, h4.header-xl, h5.header-xl, h6.header-xl, p.header-xl {
     font-size: 60px;
-    line-height: 50px;
+    line-height: 60px;
   }
 }
 h1.header-m, h2.header-m, h3.header-m, h4.header-m, h5.header-m, h6.header-m, p.header-m {
   font-size: 60px;
-  line-height: 50px;
+  line-height: 60px;
   padding: 50px 0;
+}
+h1.header-s, h2.header-s, h3.header-s, h4.header-s, h5.header-s, h6.header-s, p.header-s {
+  font-size: 30px;
+  line-height: 30px;
 }
 
 .body-text {
@@ -53,6 +57,10 @@ h1.header-m, h2.header-m, h3.header-m, h4.header-m, h5.header-m, h6.header-m, p.
 p.text-m {
   font-size: 22px;
   line-height: 32px;
+}
+p.text-s {
+  font-size: 18px;
+  line-height: 28px;
 }
 
 button {
@@ -115,10 +123,10 @@ body {
   flex-direction: column;
 }
 
-div .black {
+.black {
   background-color: #151515;
 }
-div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .black h5, div .black h6 {
+.black p, .black h1, .black h2, .black h3, .black h4, .black h5, .black h6 {
   mix-blend-mode: difference;
   color: #FFFFFF;
 }
@@ -229,6 +237,36 @@ div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .b
   }
   section.hero-contents > .row > .column:nth-child(2) button {
     margin-top: 36px;
+  }
+}
+
+footer {
+  width: 100%;
+}
+@media screen and (min-width: 376px) {
+  footer {
+    height: 244px;
+  }
+  footer .container {
+    padding-top: 80px;
+  }
+  footer .container .row {
+    justify-content: space-between;
+  }
+  footer .container .row .footer-text {
+    width: 730px;
+  }
+  footer .container .row .footer-text .row {
+    justify-content: space-between;
+  }
+  footer .container .row .footer-text .row h3 {
+    width: 160px;
+  }
+  footer .container .row .footer-text .row p {
+    width: 430px;
+  }
+  footer .container .row .social-media {
+    width: 100px;
   }
 }
 
