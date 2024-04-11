@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6, p {
 h1.header-m, h2.header-m, h3.header-m, h4.header-m, h5.header-m, h6.header-m, p.header-m {
   font-size: 60px;
   line-height: 50px;
-  margin: 50px 0;
+  padding: 50px 0;
 }
 
 p.text-m {
@@ -111,6 +111,16 @@ div .black p, div .black h1, div .black h2, div .black h3, div .black h4, div .b
   }
   section .bottom-half .row:nth-child(2) {
     justify-content: space-between;
+  }
+  section .bottom-half .row:nth-child(2) .column:nth-child(2) {
+    justify-content: space-between;
+  }
+  section .bottom-half .row:nth-child(2) .column:nth-child(2) div {
+    width: 445px;
+    height: 377px;
+  }
+  section .bottom-half .row:nth-child(2) .column:nth-child(2) div h3, section .bottom-half .row:nth-child(2) .column:nth-child(2) div p {
+    margin: 0 47.5px;
   }
 }
 @media screen and (max-width: 375px) {

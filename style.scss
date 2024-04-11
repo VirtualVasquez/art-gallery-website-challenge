@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6, p{
     margin: 0;
     &.header-m{
         @include header-size-properties(m);
-        margin: 50px 0;
+        padding: 50px 0;
     }
 }
 
@@ -144,6 +144,16 @@ section{
             }
             .row:nth-child(2){
                 justify-content: space-between;
+                .column:nth-child(2){
+                    justify-content: space-between;
+                    div{
+                        width: 445px;
+                        height: 377px;
+                        h3, p{
+                            margin: 0 47.5px;
+                        }
+                    }                
+                }
             }
         }
     }
