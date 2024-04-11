@@ -47,6 +47,7 @@ h1, h2, h3, h4, h5, h6, p{
         @include header-size-properties(xl);
         @media screen and (max-width: 375px) {
             @include header-size-properties(m);
+            margin: 30px 0;
         }        
     }
     &.header-m{
@@ -138,7 +139,6 @@ body{
     max-width: 1440px;
 }
 
-
 .row{
     display: flex;
     flex-direction: row;
@@ -189,7 +189,7 @@ div, footer, section{
     }
     @media screen and (max-width: 375px) {
         width: 375px;
-        .black-mask, img.desktop-hero{
+        .mask, img.desktop-hero{
             display: none;
         }
         img.mobile-hero{
@@ -253,7 +253,7 @@ section{
                 padding: 0px 16px;
                 flex-direction: column;
                 .column{
-                    margin-top: 36px;
+                    // margin-top: 36px;
                 }
                 > .column:nth-child(1) > h1{
                     color: $almost-black;
