@@ -53,6 +53,11 @@ h1, h2, h3, h4, h5, h6, p{
     &.header-m{
         @include header-size-properties(m);
         padding: 50px 0;
+        @media screen and (max-width: 375px){
+            padding: 30px 0;
+            font-size: 50px;
+            line-height: 50px;
+        }
     }
     &.header-s{
         @include header-size-properties(s);
@@ -78,6 +83,9 @@ h1, h2, h3, h4, h5, h6, p{
 p{
     &.text-m{
         @include body-size-properties(m);
+        @media screen and (max-width: 375px) {
+            @include body-size-properties(s);
+        }
     }
     &.text-s{
         @include body-size-properties(s);
@@ -148,11 +156,31 @@ body{
     flex-direction: column;
 }
 
+@media screen and (min-width: 376px) {
+    .mobile{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .desktop{
+        display: none;
+    }
+}
+
+
 .black{
     background-color: $almost-black;
     p, h1, h2, h3, h4, h5, h6{
         mix-blend-mode: difference;
         color: $white;
+    }
+    @media screen and (max-width: 375px) {
+        padding-left: 24px;
+        padding-right: 24px;
+        > .header-m{
+            padding: 40px 0 20px 0;
+        }
     }
 }
 
@@ -163,7 +191,7 @@ div, footer, section{
             margin-left: 165px;
         }
         @media screen and (max-width: 375px) {
-            width: 375px;
+            width: 343px;
         }
     }    
 }
@@ -262,6 +290,36 @@ section{
                     button{
                          margin-top:36px;
                     }
+                }
+            }
+        }
+        &.grid{
+            margin-top: 112px;
+            margin-bottom: 112px;
+            padding: 0px 16px;
+            > .row{
+                flex-direction: column;
+            }
+
+            p{
+                margin-bottom: 30px;
+            }
+            .row:nth-child(1){
+
+                .column:nth-child(1){
+                    
+                }
+            }
+            .row:nth-child(2){
+                img{
+                    margin-bottom: 16px;
+                }
+                .column:nth-child(2){
+                    div{
+                        height: 293px;
+                        h3, p{
+                        }
+                    }                
                 }
             }
         }
