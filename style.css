@@ -2,7 +2,6 @@ body {
   color: #151515;
   margin: 0;
   max-width: 1440px;
-  border: 1px solid red;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -21,16 +20,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 @media screen and (max-width: 375px) {
   div.container {
-    width: 343px;
+    width: 375px;
   }
 }
 
 .hero-imagery {
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
 }
 .hero-imagery .black-mask {
   width: 450px;
@@ -38,28 +33,77 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: #151515;
   z-index: 0;
 }
-.hero-imagery image {
+.hero-imagery img {
   z-index: 0;
 }
+@media screen and (min-width: 376px) {
+  .hero-imagery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .hero-imagery img.mobile-hero {
+    display: none;
+  }
+}
+@media screen and (max-width: 375px) {
+  .hero-imagery {
+    width: 375px;
+  }
+  .hero-imagery .black-mask, .hero-imagery img.desktop-hero {
+    display: none;
+  }
+  .hero-imagery img.mobile-hero {
+    width: 375px;
+    height: 240px;
+  }
+}
 
-section .top-half {
-  height: 800px;
+@media screen and (min-width: 376px) {
+  section .top-half {
+    height: 800px;
+  }
+  section .top-half > .row {
+    padding-top: 180px;
+    justify-content: space-between;
+  }
+  section .top-half > .row > .column:nth-child(1) > h1 {
+    mix-blend-mode: difference;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    font-size: 96px;
+    line-height: 88px;
+  }
+  section .top-half > .row > .column:nth-child(2) {
+    width: 350px;
+  }
+  section .top-half > .row > .column:nth-child(2) button {
+    margin-top: 72px;
+  }
 }
-section .top-half > .row {
-  padding-top: 180px;
-  justify-content: space-between;
-}
-section .top-half > .row > .column:nth-child(1) > h1 {
-  mix-blend-mode: difference;
-  color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-}
-section .top-half > .row > .column:nth-child(2) {
-  width: 350px;
-}
-section .top-half > .row > .column:nth-child(2) button {
-  margin-top: 72px;
+@media screen and (max-width: 375px) {
+  section .top-half {
+    height: 390px;
+  }
+  section .top-half > .row {
+    padding: 0px 16px;
+    flex-direction: column;
+  }
+  section .top-half > .row .column {
+    margin-top: 36px;
+  }
+  section .top-half > .row > .column:nth-child(1) > h1 {
+    color: #151515;
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
+    line-height: 50px;
+  }
+  section .top-half > .row > .column:nth-child(2) button {
+    margin-top: 36px;
+  }
 }
 
 .headings {
@@ -74,22 +118,6 @@ section .top-half > .row > .column:nth-child(2) button {
   stroke-width: 1;
   stroke-linejoin: miter;
 }
-.headings[class*=heading-xl] {
-  font-size: 96px;
-  line-height: 88px;
-}
-.headings[class*=heading-l] {
-  font-size: 70px;
-  line-height: 70px;
-}
-.headings[class*=heading-m] {
-  font-size: 60px;
-  line-height: 50px;
-}
-.headings[class*=heading-s] {
-  font-size: 36px;
-  line-height: 36px;
-}
 
 .body-text {
   font-family: "Outfit", sans-serif;
@@ -101,14 +129,14 @@ section .top-half > .row > .column:nth-child(2) button {
   stroke-width: 1;
   stroke-linejoin: miter;
   text-align: left;
-}
-.body-text[class*=text-m] {
   font-size: 22px;
   line-height: 32px;
 }
-.body-text[class*=text-s] {
-  font-size: 18px;
-  line-height: 28px;
+@media screen and (max-width: 375px) {
+  .body-text {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 
 button {

@@ -5,12 +5,37 @@ $almost-black: #151515;
 $gold: #D5966C;
 $dark-grey: #444444;
 $white: #FFFFFF;
+$header-font-sizes: (
+    xl: (font-size: 96px, line-height: 88px),
+    l: (font-size: 70px, line-height: 70px),
+    m: (font-size: 60px, line-height: 50px),
+    s: (font-size: 36px, line-height: 36px)
+);
+
+@mixin header-size-properties($size){
+    $properties: map-get($header-font-sizes, $size);
+    font-size: map-get($properties, font-size);
+    line-height: map-get($properties, line-height);
+}
+
+$body-font-sizes: (
+    m: (font-size: 22px, line-height: 32px),
+    s: (font-size: 18px, line-height: 28px)
+);
+
+@mixin body-size-properties($size){
+    $properties: map-get($body-font-sizes, $size);
+    font-size: map-get($properties, font-size);
+    line-height: map-get($properties, line-height);
+}
+
+
 
 body{
     color: $almost-black;
     margin:0;
     max-width: 1440px;
-    border: 1px solid red;
+    // border: 1px solid red;
 }
 
 h1, h2, h3, h4, h5, h6, p{
@@ -27,47 +52,91 @@ div.container{
         margin-left: 165px;
     }
     @media screen and (max-width: 375px) {
-        width: 343px;
+        width: 375px;
     }
 }
 
 .hero-imagery{
     display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
     .black-mask{
         width: 450px;
         height: 800px;
         background-color: $almost-black;
         z-index: 0;
     }
-    image{
+    img{
         z-index: 0;
     }
+    @media screen and (min-width: 376px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        img.mobile-hero{
+            display: none;
+        }        
+    }
+    @media screen and (max-width: 375px) {
+        width: 375px;
+        .black-mask, img.desktop-hero{
+            display: none;
+        }
+        img.mobile-hero{
+            width: 375px;
+            height: 240px;
+        }         
+    }
+    
 }
 
 
 section{
-    .top-half{
-        height: 800px;
-        > .row{
-            padding-top: 180px;
-            justify-content: space-between;
-            > .column:nth-child(1) > h1{
-                mix-blend-mode: difference;
-                color: $white;
-                display: flex;
+    @media screen and (min-width: 376px) {
+        .top-half{
+            height: 800px;
+            > .row{
+                padding-top: 180px;
+                justify-content: space-between;
+                > .column:nth-child(1) > h1{
+                    mix-blend-mode: difference;
+                    color: $white;
+                    display: flex;
+                    flex-direction: column;
+                    @include header-size-properties(xl);
+                }
+                > .column:nth-child(2){
+                    width: 350px;
+                    button{
+                        margin-top:72px;
+                    }
+                }
+            }        
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        .top-half{
+            height: 390px;
+            > .row{
+                padding: 0px 16px;
                 flex-direction: column;
-            }
-            > .column:nth-child(2){
-                width: 350px;
-                button{
-                    margin-top:72px;
+                .column{
+                    margin-top: 36px;
+                }
+                > .column:nth-child(1) > h1{
+                    color: $almost-black;
+                    display: flex;
+                    flex-direction: column;
+                    @include header-size-properties(m);
+                }
+                > .column:nth-child(2){
+                    button{
+                         margin-top:36px;
+                    }
                 }
             }
-        }  
+        }
+
     }   
 }
 
@@ -82,22 +151,6 @@ section{
     stroke: $black;
     stroke-width: 1;
     stroke-linejoin: miter;
-    &[class*="heading-xl"]{
-        font-size: 96px;
-        line-height: 88px;    
-    }
-    &[class*="heading-l"]{
-        font-size: 70px;
-        line-height: 70px;    
-    }
-    &[class*="heading-m"]{
-        font-size: 60px;
-        line-height: 50px;   
-    }
-    &[class*="heading-s"]{
-        font-size: 36px;
-        line-height: 36px;  
-    }
 }
 
 .body-text{
@@ -110,13 +163,9 @@ section{
     stroke-width: 1;
     stroke-linejoin: miter;
     text-align: left;
-    &[class*="text-m"]{
-        font-size: 22px;
-        line-height: 32px;
-    }
-    &[class*="text-s"]{
-        font-size: 18px;
-        line-height: 28px;
+    @include body-size-properties(m);
+    @media screen and (max-width: 375px) {
+        @include body-size-properties(s);
     }
 }
 
