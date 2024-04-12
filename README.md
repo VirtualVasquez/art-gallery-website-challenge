@@ -51,8 +51,7 @@ Users should be able to:
 - CSS custom properties
 - SASS
 - Mobile-first workflow
-- Google Fonts
- - Specifically, "Big Shoulders Display" and "Outfit"
+- Google Fonts - specifically, "Big Shoulders Display" and "Outfit"
 
 ### What I learned
 
@@ -62,7 +61,7 @@ In my haste to want to complete the challenge as quickly as possible, I did end 
 From a technical standpoint, there were a few things I learned that was happy to get more familiar with in CSS and SASS
 
 ```css
-.proud-of-this-css {
+.learned-this-css {
    /* this is what makes the color of the font change exclusively */
    /* on the parts where it overlaps another element, like a black div */
    mix-blend-mode: difference;
@@ -71,10 +70,10 @@ From a technical standpoint, there were a few things I learned that was happy to
 ```
 ```scss
 //maps in SASS makes using repeatedly used properties much less tedious
+//abbrievated map to just one line
 $header-font-sizes: (
   xl:(font-size: 96px, line-height:88px)
-  // ...abbrievated map//
-)
+);
 //mixins are what enable the retrieval of the properties defined in the map
 @mixin header-size-properties($size){
     $properties: map-get($header-font-sizes, $size);
